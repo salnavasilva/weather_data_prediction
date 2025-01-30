@@ -1,2 +1,2 @@
 # weather_data_prediction
-Repo central pour le projet webscraping_prevision_meteo
+Repo central pour le projet weather_data_prediction
