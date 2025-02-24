@@ -18,6 +18,12 @@ def energy_ouput_n_year(solar_sys_output_kWh, n_year, annual_degradation_rate = 
 
     return energy_ouput_n_year
 
+def annual_payment(initial_investement, annual_interest_rate, n_years):
+
+    p_ann = initial_investement * (annual_interest_rate/(1 - (1 + annual_interest_rate)**(-n_years)))
+
+    return np.round(p_ann, 2)
+
 
 def annual_energy_outputs(annual_solar_sys_output_kWh,  useful_life_years,
                         eff_electricity_rate_dollars_kWh = 0.15,
@@ -79,3 +85,7 @@ if __name__ == "__main__":
                                 annual_degradation_rate=0.0025,
                                 eff_electricity_rate_dollars_kWh=0.15,
                                 eff_annual_rate_increase=0.05))
+    
+    print(annual_payment(initial_investement = 1750000,
+                         annual_interest_rate = 0.06,
+                         n_years= 20))
